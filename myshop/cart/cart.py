@@ -28,9 +28,9 @@ class Cart(object):
         # marca a sessao como 'modificada' para garantir que ela seja salva
         self.session.modified = True
 
-    def remove(self):
+    def remove(self, product):
         """Remove um item do carrinho"""
-        product_id = str(product_id)
+        product_id = str(product.id)
         if product_id in self.cart:
             del self.cart[product_id]
             self.save()
