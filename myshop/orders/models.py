@@ -14,7 +14,7 @@ class Order(models.Model):
     paid = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ('created',)
+        ordering = ('-created',)
 
     def __str__(self):
         return f'Order {self.id}'

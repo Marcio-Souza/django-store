@@ -46,10 +46,11 @@ class Cart(object):
         cart = self.cart.copy()
         for product in products:
             cart[str(product.id)]['product'] = product
-            for item in cart.values():
-                item['price'] = Decimal(item['price'])
-                item['total_price'] = item['price'] * item['quantity']
-                yield item
+        
+        for item in cart.values():
+            item['price'] = Decimal(item['price'])
+            item['total_price'] = item['price'] * item['quantity']
+            yield item
 
     def __len__(self):
         """Contabiliza todos os itens que estão no carrinho de compras"""
